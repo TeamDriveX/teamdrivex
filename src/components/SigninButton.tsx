@@ -1,13 +1,9 @@
 "use client";
 import React from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
+import { Button } from "@/components/ui/button"
 import Image from "next/image";
 
-import { Button } from "@/components/ui/button"
-
-export function ButtonDemo() {
-  return 
-}
 
 
 
