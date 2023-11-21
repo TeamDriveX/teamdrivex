@@ -5,15 +5,23 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      target: deploy
     ports:
       - 3000:3000
+    volumes:
+      - ./:/app 
+      - /app/node_modules
     depends_on:
       - db
   db:
     image: postgres:15-alpine
-    ports:
-      - 5432:5432  # enables connecting locally via psql
     environment:
       POSTGRES_DB: teamdrivex
       POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - 5432:5432
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+      - pg-data:/var/lib/postgresql/data
+
+volumes:
+  pg-data:

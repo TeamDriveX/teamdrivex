@@ -19,7 +19,7 @@ export default function Home() {
 
     return (
       <main className="flex min-h-screen flex-col items-center justify-center p-24">
-        <h1 className=" text-center text-3xl text-black/50 font-medium leading-none tracking-tight sm:text-5xl lg:text-7xl">Youstud. lets begin a new Journey 🚀</h1>
+        <h1 className=" text-center text-3xl text-black/50 font-medium leading-none tracking-tight sm:text-5xl lg:text-7xl">Youstud. Lets begin a Journey 🚀</h1>
       </main>
     )
 }
