@@ -35,54 +35,12 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-
-
-
-commands
-
-docker build -t teamdrivex .
-
-docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres:15-alpine
-
-
-npx prisma migrate dev --name init
-
-
-postgresql://postgres:mysecretpassword@127.0.0.1/teamdrivex?statusColor=686B6F&env=local&name=TeamDrivex-Database&tLSMode=0&usePrivateKey=false&safeModeLevel=0&advancedSafeModeLevel=0&driverVersion=0&lazyload=false
-
-## Team Drive X | Docker CLI command
+## Team Drive X | CLI command need to local development
 
 ```sh
 
+docker compose up --build -d
 
-
-docker pull postgres:15-alpine
-
-docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres:15-alpine
-
-docker exec -it some-postgres bash
-
-
-To login as postgres user
-
-psql -U postgres
-
-
-To create database
-
-create database teamdrivex;
-
-To list out all the database
-
-\l;
-
-To connect to database
-
-\c teamdrivex;
-
-
-To see the table
-
-\dt;
+npx prisma migrate dev --name init
 
 ```
