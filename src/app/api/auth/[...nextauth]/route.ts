@@ -22,7 +22,6 @@ export const authOptions: AuthOptions = {
         };
       },
     }),
-    
   ],
 
   callbacks: {
