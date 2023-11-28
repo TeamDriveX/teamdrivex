@@ -37,7 +37,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Team Drive X | CLI command need to local development
 
-At first you need to generate Google API Client ID and Client Secret and set the callback url to 
+At first you need to generate Google API Client ID and Client Secret and set the callback url to
 
 ```sh
 http://localhost:3000/api/auth/callback/google
@@ -46,8 +46,6 @@ http://localhost:3000/api/auth/callback/google
 Then you need to create an .env file in your local repository and save those value like .env.example file
 
 ```sh
-touch .env
-
 cp .env.example .env
 ```
 
@@ -60,7 +58,7 @@ docker compose up --build -d
 Run these command
 
 ```sh
-docker exec -it teamdrivex-db-1 sh
+docker-compose exec -it db sh
 psql -U postgres;
 create database teamdrivex;
 ```
@@ -68,7 +66,7 @@ create database teamdrivex;
 Now run these command in your app container
 
 ```sh
-docker exec -it teamdrivex-app-1 bash
+docker-compose exec -it app sh
 npx prisma migrate dev --name init
 ```
 
