@@ -34,3 +34,42 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Team Drive X | CLI command need to local development
+
+At first you need to generate Google API Client ID and Client Secret and set the callback url to
+
+```sh
+http://localhost:3000/api/auth/callback/google
+```
+
+Then you need to create an .env file in your local repository and save those value like .env.example file
+
+```sh
+cp .env.example .env
+```
+
+After that, you need to start docker and need to run these command
+
+```sh
+docker compose up --build -d
+```
+
+Now run these command in your app container
+
+```sh
+docker-compose exec -it app sh
+npx prisma migrate dev --name init
+```
+
+If you want to close or down the service then
+
+```sh
+docker compose down
+```
+
+All these commands are for the very first time, if you want to re-run the whole application. Then you need to run just
+
+```sh
+docker compose up -d
+```
