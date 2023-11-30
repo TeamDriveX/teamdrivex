@@ -55,14 +55,6 @@ After that, you need to start docker and need to run these command
 docker compose up --build -d
 ```
 
-Run these command
-
-```sh
-docker-compose exec -it db sh
-psql -U postgres;
-create database teamdrivex;
-```
-
 Now run these command in your app container
 
 ```sh
